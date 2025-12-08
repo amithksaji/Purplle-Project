@@ -10,6 +10,7 @@ public class PurplleTest extends PurplleBase {
 	public void testMenu() throws Exception {
 	PurpllePage ob= new PurpllePage(driver);
 	ob.title();
+	ob.linkCount();
 	ob.search("Shampoo");
 	ob.categoriesMenu();
 	ob.addToCart();
