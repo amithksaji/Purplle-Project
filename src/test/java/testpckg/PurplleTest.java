@@ -14,12 +14,7 @@ public class PurplleTest extends PurplleBase {
 	ob.search("Shampoo");
 	ob.categoriesMenu();
 	ob.addToCart();
-	ob.shopCategorys();
-	ob.Brands();
-	ob.NewItem();
-	ob.Splurge();
-	ob.Magazine();
-	ob.EliteOffers();
+	ob.Headerelements();
 	ob.shopCategoryList();
 	}
 
