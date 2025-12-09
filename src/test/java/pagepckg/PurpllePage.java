@@ -29,24 +29,10 @@ public class PurpllePage {
 	@FindBy(xpath="//*[@id=\"filter_0\"]/div[2]/a/span")
 	WebElement applyFilter;
 	@FindBy(xpath  = "/html/body/app-root/div/div/div/server-driven-listing/div[2]/div[1]/div[4]/div/app-listing-item[1]/div/div/div/div/div[3]/a[1]")
-	WebElement cart;
-
+	WebElement cart;	
+	@FindBy(xpath="//*[@id=\"body\"]/app-root/div/div/app-header/header/div[3]/div/div/div[2]")
+	List<WebElement> header;
 	@FindBy(xpath="//*[@id=\"body\"]/app-root/div/div/app-header/header/div[3]/div/div/div[2]/div[1]/a")
-	WebElement shopcategories;
-	@FindBy(xpath="//*[@id=\"body\"]/app-root/div/div/app-header/header/div[3]/div/div/div[2]/div[2]/a")
-	WebElement brand;
-	@FindBy(xpath="//*[@id=\"body\"]/app-root/div/div/app-header/header/div[3]/div/div/div[2]/div[3]/a")
-	WebElement offers;
-	@FindBy(xpath="//*[@id=\"body\"]/app-root/div/div/app-header/header/div[3]/div/div/div[2]/div[4]/a")
-	WebElement newl;
-	@FindBy(xpath="//*[@id=\"body\"]/app-root/div/div/app-header/header/div[3]/div/div/div[2]/div[5]/a")
-	WebElement splurge;
-	@FindBy(xpath="//*[@id=\"body\"]/app-root/div/div/app-header/header/div[3]/div/div/div[2]/div[6]/a")
-	WebElement magazine;
-	@FindBy(xpath="//*[@id=\"body\"]/app-root/div/div/app-header/header/div[3]/div/div/div[2]/div[7]/a")
-	WebElement eliteoffers;
-	
-	@FindBy(xpath = "//*[@id=\"body\"]/app-root/div/div/app-header/header/div[3]/div/div/div[2]/div[1]/a")
 	WebElement shopcategry;
 	@FindBy(xpath = "//*[@id=\"body\"]/app-root/div/div/app-header/header/div[3]/div/div/div[2]/div[1]/div/div/div[1]/div/a[5]")
 	WebElement item;
@@ -89,43 +75,17 @@ public class PurpllePage {
 			Thread.sleep(2000);
 			cart.click();
 		}
-
-		
-		public void shopCategorys() {
-			String shopCategories=shopcategories.getText();
-			System.out.println(shopCategories);
+		public void Headerelements() {
+			List<WebElement> li=header;
+			for(WebElement tmp:header) {
+				String headerlist=tmp.getText();
+				System.out.println(headerlist);
+			}
 		}
-		public void Brands() {
-			String bnd=brand.getText();
-			System.out.println(bnd);
-		}
-		public void Offers() {
-			String off=offers.getText();
-			System.out.println(off);
-		}
-		public void NewItem() {
-			String ne=newl.getText();
-			System.out.println(ne);
-		}
-		public void Splurge() {
-			String splur=splurge.getText();
-			System.out.println(splur);
-		}
-		public void Magazine() {
-			String magaz=magazine.getText();
-			System.out.println(magaz);
-		}
-		
-		public void EliteOffers() {
-			String elit=eliteoffers.getText();
-			System.out.println(elit);
-		}
-		
-		public void shopCategoryList() {
+		public void shopCategoryList() throws Exception {
+			Thread.sleep(2000);
 			Actions act=new Actions(driver);
 			act.moveToElement(shopcategry).perform();
 			item.click();
 		}
-		
-
 }
